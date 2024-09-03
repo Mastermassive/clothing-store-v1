@@ -8,6 +8,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 import Button from "../button/button.component";
 
+
 const defaultFormFields = {
     email: '',
     password: '',
@@ -18,10 +19,11 @@ const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {email, password} = formFields;
 
+
     const signInWithGoogle = async () => {
         try {
-            const response = await signInWithGooglePopup();
-            await getUserDocumentFromAuth(response.user);
+            const {user} = await signInWithGooglePopup();
+            await getUserDocumentFromAuth(user);
         } catch(err) {
             console.log("error occurred");
         }
@@ -41,8 +43,7 @@ const SignInForm = () => {
         event.preventDefault();
 
         try{
-            const response = await signInUserWithEmailAndPassword(email, password);
-            console.log(response);
+            const {user} = await signInUserWithEmailAndPassword(email, password);
             resetFormFields();
         }catch(error){
             if(error.code==="auth/invalid-credential"){
