@@ -1,17 +1,26 @@
-import './directory-item.styles.scss';
+import {BackgroundImage, DirectoryItemContainer, Body} from './directory-item.styles.jsx';
+import { StyleSheetManager } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
+import {useNavigate} from "react-router-dom";
 
 const DirectoryItem = ({category}) => {
-    const {title, imageUrl} = category;
+    const {title, imageUrl, route} = category;
+    const navigate = useNavigate();
+    const navigateHandler = () => {
+      navigate(route);
+    }
     return(
-        <div className="directory-item-container">
-            <div className="background-image" style={{
-              backgroundImage: `url(${imageUrl})`
-            }}/>
-            <div className="body">
+        <DirectoryItemContainer onClick={navigateHandler}>
+          <StyleSheetManager shouldForwardProp={isPropValid}>
+            <BackgroundImage 
+              imageUrl= {imageUrl}
+            />
+          </StyleSheetManager> 
+            <Body>
               <h2>{title}</h2>
               <p>Shop Now</p>
-            </div>
-          </div>
+            </Body>
+          </DirectoryItemContainer>
     )
 }
 
