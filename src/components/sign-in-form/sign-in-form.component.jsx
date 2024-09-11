@@ -44,6 +44,7 @@ const SignInForm = () => {
 
         try{
             const {user} = await signInUserWithEmailAndPassword(email, password);
+            console.log(user);
             resetFormFields();
         }catch(error){
             if(error.code==="auth/invalid-credential"){
