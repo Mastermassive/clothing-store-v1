@@ -23,7 +23,7 @@ export const signInFailed = (error) => {
 }
 
 export const signUpStart = (email, password, dispalyName) => {
-    return createAction(UserActionTypes.SIGN_UP_FAILED, {
+    return createAction(UserActionTypes.SIGN_UP_START, {
         email,
         password,
         dispalyName,
@@ -38,5 +38,14 @@ export const signUpSuccess = (user, additionalDetails) => {
 }
 
 export const signUpFailed = (error) => {
-    return createAction(UserActionTypes.SIGN_IN_FAILED, error);
+    return createAction(UserActionTypes.SIGN_UP_FAILED, error);
 }
+
+export const signOutStart = () =>
+    createAction(UserActionTypes.SIGN_OUT_START);
+  
+  export const signOutSuccess = () =>
+    createAction(UserActionTypes.SIGN_OUT_SUCCESS);
+  
+  export const signOutFailed = (error) =>
+    createAction(UserActionTypes.SIGN_OUT_FAILED, error);
