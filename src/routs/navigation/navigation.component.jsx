@@ -38,9 +38,9 @@ const Navigation = () => {
                 </StyledLink>
                 {
                     currentUser ? (
-                        <StyledSpan onClick={signOutUser}>
+                        <StyledLink as="span" onClick={signOutUser}>
                             SIGN OUT
-                        </StyledSpan>
+                        </StyledLink>
                     ) : (
                         <StyledLink  to="/auth">
                             SIGN IN
