@@ -1,4 +1,4 @@
-import {FormInputLabel, Input, Group} from './form-input.styles.jsx';
+import {FormInputLabel, Input, Group} from './form-input.styles';
 import { StyleSheetManager } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 

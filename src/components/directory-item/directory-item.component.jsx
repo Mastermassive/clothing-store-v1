@@ -1,4 +1,4 @@
-import {BackgroundImage, DirectoryItemContainer, Body} from './directory-item.styles.jsx';
+import {BackgroundImage, DirectoryItemContainer, Body} from './directory-item.styles';
 import { StyleSheetManager } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import {useNavigate} from "react-router-dom";

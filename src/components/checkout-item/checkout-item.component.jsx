@@ -7,11 +7,11 @@ import {
     Quantity,
     Arrow,
     RemoveButton,
-} from "./checkout-item.styles.jsx";
+} from "./checkout-item.styles";
 
-import { addItemToCart, removeItemFromCart, clearItemFromCart } from "../../store/cart/cart.action.js";
+import { addItemToCart, removeItemFromCart, clearItemFromCart } from "../../store/cart/cart.action";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCartItems } from "../../store/cart/cart.selector.js";
+import { selectCartItems } from "../../store/cart/cart.selector";
 
 const CheckoutItem = ({item}) => {
     const dispatch = useDispatch();

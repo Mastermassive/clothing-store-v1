@@ -1,4 +1,11 @@
-import {ProductCardContainer, StyledImg, StyledButton, FooterContainer, SpanName, SpanPrice} from "./product-card.styles";
+import {
+    ProductCardContainer, 
+    StyledImg, 
+    StyledButton, 
+    FooterContainer, 
+    SpanName, 
+    SpanPrice
+} from "./product-card.styles";
 
 import {BUTTON_TYPE_CLASSES} from "../button/button.component";
 
