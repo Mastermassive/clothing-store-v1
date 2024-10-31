@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {ReactComponent as ShoppingBagSvg} from "../../assets/shopping-bag.svg"
 
 export const ShoppingBagIcon = styled(ShoppingBagSvg)`
-    widht: 24px;
+    width: 24px;
     height: 24px;
 `
 

@@ -1,3 +1,4 @@
+import { User } from "firebase/auth";
 import { AdditionalInfo, UserData } from "../../utils/firebase/firebase.utils";
 import { createAction , withMatcher, Action, ActionWithPayload} from "../../utils/reducers/reducers.utils";
 import { UserActionTypes } from "./user.types";
@@ -17,12 +18,12 @@ export type SignInFailed = ActionWithPayload<UserActionTypes.SIGN_IN_FAILED, Err
 
 export type SignUpStart = ActionWithPayload<
     UserActionTypes.SIGN_UP_START, 
-    {email: string, password: string, dispalyName: string;}
+    {email: string, password: string, displayName: string;}
 >;
 
 export type SignUpSuccess = ActionWithPayload<
     UserActionTypes.SIGN_UP_SUCCESS,
-    {user: UserData, additionalDetails: AdditionalInfo;}
+    {user: User, additionalDetails: AdditionalInfo;}
 >;
 
 export type SignUpFailed = ActionWithPayload<UserActionTypes.SIGN_UP_FAILED, Error>;
@@ -46,7 +47,7 @@ export const emailSignInStart = withMatcher(
     return createAction(UserActionTypes.EMAIL_SIGN_IN_START, {email, password});
 })
 
-export const signInSuccess = withMatcher((user: UserData): SignInSuccess => {
+export const signInSuccess = withMatcher((user: UserData & {id: string}): SignInSuccess => {
     return createAction(UserActionTypes.SIGN_IN_SUCCESS, user);
 })
 
@@ -54,16 +55,16 @@ export const signInFailed = withMatcher((error: Error): SignInFailed => {
     return createAction(UserActionTypes.SIGN_IN_FAILED, error);
 })
 
-export const signUpStart = withMatcher((email: string, password: string, dispalyName: string): SignUpStart => {
+export const signUpStart = withMatcher((email: string, password: string, displayName: string): SignUpStart => {
     return createAction(UserActionTypes.SIGN_UP_START, {
         email,
         password,
-        dispalyName,
+        displayName,
     });
 })
 
 export const signUpSuccess = withMatcher(
-    (user: UserData, additionalDetails: AdditionalInfo): SignUpSuccess => {
+    (user: User, additionalDetails: AdditionalInfo): SignUpSuccess => {
     return createAction(UserActionTypes.SIGN_UP_SUCCESS, {
         user,
         additionalDetails

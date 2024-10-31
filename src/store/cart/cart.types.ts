@@ -1,3 +1,5 @@
+import { CategoryItem } from "../categories/category.types";
+
 export enum CartActionTypes  {
     SET_IS_CART_OPEN = "cart/SET_IS_CART_OPEN",
     SET_CART_ITEMS = "cart/SET_CART_ITEMS",
@@ -5,10 +7,6 @@ export enum CartActionTypes  {
     SET_CART_TOTAL = "cart/SET_CART_TOTAL",
 }
 
-export type CartItem = {
-    id: number;
-    imageUrl: string;
-    name: string;
-    price: number;
+export type CartItem = CategoryItem & {
     quantity: number;
 }
