@@ -2,8 +2,18 @@ import {BackgroundImage, DirectoryItemContainer, Body} from './directory-item.st
 import { StyleSheetManager } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import {useNavigate} from "react-router-dom";
+import { FC } from 'react';
 
-const DirectoryItem = ({category}) => {
+type DirectoryItemProps = {
+  category: {
+    id: number;
+    title: string;
+    imageUrl: string;
+    route: string;
+  }
+}
+
+const DirectoryItem: FC<DirectoryItemProps> = ({category}) => {
     const {title, imageUrl, route} = category;
     const navigate = useNavigate();
     const navigateHandler = () => {
