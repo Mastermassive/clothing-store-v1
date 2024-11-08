@@ -10,6 +10,18 @@ export const StyledButton = styled(Button)`
     &:hover{
        opacity: 0.85;
     } 
+
+    @media screen and (max-width: 800px) {
+        display: block;
+        width: 90%;
+        opacity: 0.9;
+        min-width: unset;
+        padding: 0px 10px;
+
+        &:hover{
+            opacity: unset;
+        }
+    }
 `
 export const ProductCardContainer = styled.div`
     width: 100%; 
@@ -21,6 +33,14 @@ export const ProductCardContainer = styled.div`
     &:hover ${StyledButton} {
         display: flex;
     }
+
+    @media screen and (max-width: 800px) {
+        width: 40vw;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 80vw;
+    }
 `
 export const StyledImg = styled.img`
     width: 100%; 
@@ -29,6 +49,11 @@ export const StyledImg = styled.img`
     margin-bottom: 5px;
     &:hover { 
         opacity: 0.8; 
+    }
+    @media screen and (max-width: 800px) {
+        &:hover {
+            opacity: unset;
+        }
     }
 `
 export const FooterContainer = styled.div`

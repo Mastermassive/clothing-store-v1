@@ -19,13 +19,22 @@ export const ImageContainer = styled.div`
 `
 export const Name = styled.span`
     width: 23%; 
+    @media screen and (max-width: 800px) {
+        font-size: 10px;
+    }
 `
 export const Price = styled.span`
     width: 23%;
+    @media screen and (max-width: 800px) {
+        font-size: 15px;
+    }
 `
 export const QuantityContainer = styled.span`
     width: 23%;
     display: flex;
+    @media screen and (max-width: 800px) {
+        font-size: 15px;
+    }
 `
 export const Quantity = styled.span`
     margin: 0 10px; 
