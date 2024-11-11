@@ -2,6 +2,7 @@ import { render } from "@testing-library/react";
 import { legacy_createStore as createStore } from "redux";
 import { rootReducer } from "../../store/root-reducer";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 
 export function renderWithProviders (
@@ -14,7 +15,9 @@ export function renderWithProviders (
 ) {
     const Wrapper = ({children}) => (
         <Provider store={store}>
-            {children}
+            <BrowserRouter>
+                {children}
+            </BrowserRouter>
         </Provider>
     )
 
